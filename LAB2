@@ -1,0 +1,20 @@
+find / -maxdepth 2 -name group
+find / -type f -name 'c**d'.*
+find / -type f -user
+find / -nouser
+find /usr/bin -size +10M
+echo hello > 1.txt
+echo world > 2.txt
+cat 1.txt 2.txt > hello_world.txt
+seq 1 10000 > numbers.txt
+split numbers.txt
+less /etc/hosts > hosts_lines.txt
+tail hosts_lines.txt -n 4
+tail /etc/passwd -n 5
+wc /etc/passwd -w -m
+grep -E "^s" /etc/passwd
+grep -E "nologin$" /etc/passwd
+grep -E "/var|/run" /etc/passwd
+cut -d: -f1 /etc/passwd > users.txt
+grep -E "oo" users.txt
+echo /bin/* | tee -a binary.txt
