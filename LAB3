@@ -1,0 +1,31 @@
+ps aux > processes.txt
+#question 2 does not seem to work like it sounds like it should, I asked some other guys and they said this looked right. Not sure why it wouldn't work!
+ps -auxf | pgrep "tty1" > tty.txt
+free > free.txt
+sleep 2000 &
+pgrep sleep
+kill $(pgrep sleep)
+#also, I couldn't understand how you were asking questions 7 through 12, and it did not make much sense to me, so I formatted them a little differently below, I thought as long as I was showing all the functions of the kill command that it would be acceptable. 
+sleep 500 &
+kill -19 $(pgrep sleep)
+kill -18 $(pgrep sleep)
+kill -9 $(pgrep sleep)
+nohup watch date
+uptime -p
+echo "Hello! I love Linux" > my_file.txt
+gzip -c my_file.txt > my_cool_zip.gz
+zcat my_cool_zip.gz > unzipped.txt
+bzip2 -c my_file.txt > my_cool_bzip.bz2
+bzcat my_cool_bzip.bz2 > un_bzipped.txt
+xz -v8 my_file.txt
+xzcat my_file.txt.xz > my_compressed_file.txt
+unxz my_file.txt.xz
+tar -cf documents.tar.gz ~/Documents
+tar -xf documents.tar.gz
+sudo dd if=/dev/zero of=/swapfile bs=2M count=1000
+echo "this is grandmas waffle recipe" > secret_file.txt
+sudo chown root:root secret_file.txt
+sudo chmod 751 secret_file.txt
+sudo chmod +t secret_file.txt
+ln secret_file.txt my_hard_secret_link.txt
+ln -s secret_file.txt my_soft_secret_link.txt
