@@ -1,0 +1,50 @@
+#question 1
+sudo apt update
+sudo apt upgrade
+apt-cache search steam
+sudo apt-get install steam
+steam
+snap find code
+sudo snap install --classic code
+apt-cache search gimp
+sudo apt install gimp
+gimp
+snap find skype
+sudo snap install skype
+skype
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:gerardpuig/ppa
+sudo apt update
+sudo apt install ubuntu-cleaner
+apt-cache search clementine
+sudo apt install clementine
+clementine
+
+
+#question 2
+
+version: '3.3'
+
+services:
+        mysql:
+                image: mysql
+                restart: always
+                environment:
+                        MYSQL_USER: 'jared'
+                        MYSQL_ROOT_PASSWORD: 'password'
+                ports:
+                        - '3307:3306'
+                volumes:
+                        - ./db:/var/lib/mysql
+
+         postgresql:
+                image: postgres
+                restart: always
+                environment:
+                        PORTGRES_USER: 'jared'
+                        POSTGRES_PASSWORD: 'password'
+                ports:
+                        - 5438:5432
+                volumes:
+                        - ./postgres-data:/var/lib/postgresql/data
+                        - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
