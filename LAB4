@@ -48,6 +48,42 @@ services:
                 volumes:
                         - ./postgres-data:/var/lib/postgresql/data
                         - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+                   wordpress:
+                depends_on:
+                        - mysql
+                image: wordpress:latest
+                volumes:
+                        - wordpress_data:/var/www/html
+                ports:
+                        - "8000:80"
+                restart: always
+                environment:
+                        WORDPRESS_DB_HOST: mysql:3307
+                        WORDPRESS_DB_USER: root
+                        WORDPRESS_DB_PASSWORD: password
+                        WORDPRESS_DB_NAME: my_wp_database
+                volumes:
+                        ["./:/var/www/html"]
+
+          ubuntu:
+                container_name: ubuntu
+                image: ubuntu
+                restart: always
+                command: "/bin/bash"
+
+          owncloud:
+                image: owncloud
+                restart: always
+                ports:
+                        - 8080:80
+
+
+          mariadb:
+                image: mariadb
+                restart: always
+                environment:
+                        MYSQL_ROOT_PASSWORD: password
+ 
 #question 3
 #CHMOD:
 #-------
