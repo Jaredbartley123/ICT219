@@ -48,3 +48,85 @@ services:
                 volumes:
                         - ./postgres-data:/var/lib/postgresql/data
                         - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+#question 3
+#CHMOD:
+#-------
+
+#commands:
+#-----------
+whereis chmod
+ldd /bin/chmod
+ 
+#Libraries
+#----------
+
+#linux-vdso.so.1 (0x00007ffe649ca000)  
+#(Used to limit system calls that slow down processes and instead is something an application can call on to get certain information instead, such as "gettimeofday(2)")                                  
+
+#libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ff144fa3000) 
+#(is a library of standard functions that can be used by all C programs)
+      
+#/lib64/ld-linux-x86-64.so.2 (0x00007ff1455a3000)
+#(stores the 64-bit library files which are loaded by programs)
+
+#zip:
+#-------
+
+#commands:
+#----------
+whereis zip
+ldd /usr/bin/zip
+
+#Libraries:
+#------------
+#linux-vdso.so.1 (0x00007fff6eabd000) 
+#(Used to limit system calls that slow down processes and instead is something an application can call on to get certain information instead, such as "gettimeofday(2)")                                      
+
+#libbz2.so.1.0 => /lib/x86_64-linux-gnu/libbz2.so.1.0 (0x00007f2db5851000)                                                                               
+#(is a library for block-sorting data compression)
+
+#libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f2db5460000)       
+#(is a library of standard functions that can be used by all C programs)
+
+#/lib64/ld-linux-x86-64.so.2 (0x00007f2db5ce4000) 
+#(stores the 64-bit library files which are loaded by programs)
+
+
+#apropos:
+#---------
+
+#commands:
+#----------
+whereis apropos
+ldd /usr/bin/apropos
+
+#Libraries:
+#-----------
+
+#linux-vdso.so.1 (0x00007ffe00b86000)                                    
+#(Used to limit system calls that slow down processes and instead is something an application can call on to get certain information instead, such as "gettimeofday(2)")
+
+#libmandb-2.8.3.so => /usr/lib/man-db/libmandb-2.8.3.so (0x00007f017033a000)                                                                              
+#(is the package that contains the man command data base? had a hard time finding this one.. just guessing by the db being standard notation for database)
+
+#libman-2.8.3.so => /usr/lib/man-db/libman-2.8.3.so (0x00007f0170112000) 
+#(is the package that contains the man command)
+
+#libgdbm.so.5 => /usr/lib/x86_64-linux-gnu/libgdbm.so.5 (0x00007f016ff05000)                                                                             
+#(is a library of database functions that use extensible hashing and work similar to the standard UNIX dbm. )
+
+
+#libpipeline.so.1 => /usr/lib/x86_64-linux-gnu/libpipeline.so.1 (0x00007f016fcf7000)                                                                     
+#(libpipeline is a C library for setting up and running pipelines of processes, without needing to involve shell command-line parsing which is often error-prone and insecure.)
+
+#libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f016f906000)       
+#(is a library of standard functions that can be used by all C programs)
+
+#libseccomp.so.2 => /lib/x86_64-linux-gnu/libseccomp.so.2 (0x00007f016f6bf000)                                                                           
+#(allows a process to make a one-way transition into a "secure" state where it cannot make any system calls except exit, sigreturn, read and write to already-open file descriptors.)
+
+#libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007f016f4a2000)       
+#(is a general-purpose lossless data compression C library.)
+
+#/lib64/ld-linux-x86-64.so.2 (0x00007f017074c000) 
+#(stores the 64-bit library files which are loaded by programs)
