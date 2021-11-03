@@ -11,6 +11,10 @@ systemctl stop mysql
 systemctl start mysql
 systemctl status mysql
 wall -n "Hello everyone!"
-# missing question 11 
+cd /etc/init
+vim mysql.conf
+#modifying the runlevel variables as following.
+#start on runlevel [!2]
+#stop on runlevel [!5]
 telinit 6
 
