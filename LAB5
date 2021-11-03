@@ -1,0 +1,10 @@
+cat /proc/version
+cat /proc/meminfo
+cat /proc/meminfo | grep MemAvailable
+cat /proc/meminfo | grep Shmem:
+cat /proc/ioports | grep keyboard
+cat /proc/iomem | grep intel
+journalctl -b | grep device > boot.log
+who -r
+telinit 2
+
