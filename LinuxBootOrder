@@ -1,0 +1,6 @@
+# The first step to the boot sequence is the BIOS, BIOS is an acronym for Basic Input/Output System. This step searches for and starts the MBR. 
+# That leads us to the second step, the MBR or also known as the Master Boot Record. The MBR takes care of loading and starting the GRUB boot loader. 
+# Next we are lead to the GRUB stage, this stage is responsible for loading the Kernel. (if you have multiple kernels, this would be where you would pick which one to run.)
+# Then we have the Kernel, this stage is responsible for mounting the root file system and executing the /sbin/init program.
+# Next is the Init/systemd stage, this is where the system would execute runlevel programs.
+# That is all of the steps that take place when a machine is booting!
