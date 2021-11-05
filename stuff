@@ -1,0 +1,30 @@
+ps aux | grep kernel
+ps aux
+watch -n 5 date
+sleep 200 &
+fg
+kill 40002
+nice -n 5 sleep 1000
+echo $(uptime) > uptime.txt
+touch foo.txt
+gzip -c foo.txt > foo.gz
+zcat foo.gz
+gunzip foo.gz
+tar -cvf archive.tar Downloads
+touch foobar.txt
+chmod 764 foobar.txt
+chown root:root foobar.txt
+ln -s foobar.txt ~/
+sudo apt install python3.8
+apt search mysql
+
+
+### QUESTION 18 ###
+# Shared libraries are great because they are a shared location of code that can be used to help limit resources being wasted by different applications sending different requests for the same thing. As well it can help people programming as they do not have to go out of their way to code something that would have been coded a million times. 
+# The reason that it can be problematic is that it is a single point of failure, if someone managed to delete the shared library that is required, nothing will work as these are usually vital pieces of code. 
+
+
+### QUESTION 19 ### 
+# Docker is fast to spin up multiple VM's and is great in a testing environment, they are extrememly lightweight meaning you can run many on one machine (better utilization of resources). And using applications such as Kubernetes, you can actually manage many different docker instances at once which can help make administration simpler. 
+# The disadvantages include the fact that many more machines are at risk if one server goes down, as well allocating extra resources is a much more difficult task than having an abundance of hardware with native installation, and it can be difficult to learn for newer administrators as it is mostly command line. 
+~                                                                   
