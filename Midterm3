@@ -1,0 +1,71 @@
+#1
+less /proc/version
+#2
+less /proc/meminfo
+#3
+lspci
+#4
+usb-devices
+#5
+tree /var/log > logs.txt
+#6
+lsmod | grep intel
+#7 Please don't hate me for how gross this solution is, I know its terrible,
+# I just forgot where the Init files are so this was the workaround
+cd ~
+dmesg > dmesg.txt
+tail -n 10 dmesg.txt
+#So I remembered that it was in the logs file, so this is the right way, 
+#but feel free to laugh at my crazy workaround, below is my actual answer
+tail /var/log/dmesg.0
+#8
+runlevel
+#9
+init 0
+
+#10
+init 6
+or
+reboot
+
+#11
+wall "Hey!"
+#12 
+systemctl start docker
+#13
+ls /etc/rc2.d
+#14
+init 2
+#15
+df
+#16
+mount /home/$USER/filesystem /mnt/foo
+#17
+umount /mnt/foo
+#18
+Bios - starts all of the hardware on the system and looks for the MBR to
+boot onto.
+MBR - loads the operating system and sends it to the bootloader
+Bootloader - chooses which operating system to use (if many are shown)
+and loads the kernel
+kernel - loads in the operating system and passes it on to the init
+init - starts all of the initial processes in the operating system
+#19
+0 - Halt, this stops the system
+1 - Single user, no networking, this would be good if you wanted to start
+the system without an internet connection or other users allowed, only root.
+2 - Multi-user, no networking, this would be good if you wanted users to be
+able to access the server but have no internet connection
+3 - Multiuser, with networking, with no GUI, allows for multiple users to log
+into the server with only a command line interface. Good for low resource
+usage when working with a server day to day.
+4 - undefined, this is able to be programed and is an undefined runlevel.
+5 - GUI is enabled allowing users to use the machine with a graphical
+interface, good for users on a desktop machine for day to day use.
+6 - Reboot, allows for the system to be restarted.
+#20
+MBR drives are intended to be booted from on the system startup. They can be
+formatted using fdisk or cfdisk.
+
+GPT is meant for extended partitions and can be formatted using gdisk or
+sgdisk.
